@@ -63,9 +63,9 @@ set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # Options for building certain parts of the repo. Everything is built by default.
-option(BUILD_SHARED_LIBS "Build with shared libs (needed for JNI)" ON)
+option(BUILD_SHARED_LIBS "Build with shared libs (needed for JNI)" OFF)
 option(WITH_JAVA "Include Java and JNI in the build" OFF)
-option(WITH_JAVA_SOURCE "Build Java source jars" ${WITH_JAVA})
+option(WITH_JAVA_SOURCE "Build Java source jars" OFF)
 option(WITH_DOCS "Build Doxygen docs (needs Git for versioning)" OFF)
 cmake_dependent_option(
     DOCS_WARNINGS_AS_ERRORS
@@ -74,22 +74,22 @@ cmake_dependent_option(
     WITH_DOCS
     OFF
 )
-option(WITH_CSCORE "Build cscore (needs OpenCV)" ON)
+option(WITH_CSCORE "Build cscore (needs OpenCV)" OFF)
 option(WITH_NTCORE "Build ntcore" ON)
-option(WITH_WPIMATH "Build wpimath" ON)
+option(WITH_WPIMATH "Build wpimath" OFF)
 cmake_dependent_option(
     WITH_WPIUNITS
     "Build wpiunits"
-    ON
+    OFF
     WITH_JAVA
     OFF
 )
-option(WITH_WPILIB "Build hal, wpilibc/j, and developerRobot (needs OpenCV)" ON)
+option(WITH_WPILIB "Build hal, wpilibc/j, and developerRobot (needs OpenCV)" OFF)
 option(WITH_EXAMPLES "Build examples" OFF)
-option(WITH_TESTS "Build unit tests (requires internet connection)" ON)
-option(WITH_GUI "Build GUI items" ON)
-option(WITH_SIMULATION_MODULES "Build simulation modules" ON)
-option(WITH_PROTOBUF "Build protobuf support" ON)
+option(WITH_TESTS "Build unit tests (requires internet connection)" OFF)
+option(WITH_GUI "Build GUI items" OFF)
+option(WITH_SIMULATION_MODULES "Build simulation modules" OFF)
+option(WITH_PROTOBUF "Build protobuf support" OFF)
 
 # Options for using a package manager (e.g., vcpkg) for certain dependencies.
 option(USE_SYSTEM_FMTLIB "Use system fmtlib" OFF)
